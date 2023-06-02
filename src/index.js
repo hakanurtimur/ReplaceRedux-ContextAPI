@@ -7,7 +7,9 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
 // import productReducer from './store/reducers/products';
-import ProductContextProvider from './ctx/product-context';
+
+
+import configureStore from './hooks-store/products-store'
 
 // const rootReducer = combineReducers({
 //   shop: productReducer
@@ -15,11 +17,13 @@ import ProductContextProvider from './ctx/product-context';
 
 // const store = createStore(rootReducer);
 
+configureStore();
+
 ReactDOM.render(
-  <ProductContextProvider>
+
     <BrowserRouter>
       <App />
-    </BrowserRouter>
-  </ProductContextProvider>,
+    </BrowserRouter>,
+
   document.getElementById('root')
 );
